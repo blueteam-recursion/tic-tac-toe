@@ -92,16 +92,17 @@ class View {
 
    static createStartPage() {
         let container = document.createElement("div");
-        container.classList.add("vh-100", "d-flex", "flex-column", "align-items-center", "justify-content-center", "text-center");
+        container.classList.add("vh-100", "d-flex", "flex-column", "align-items-center", "justify-content-center", "text-center", "bg-customBlue");
         container.innerHTML = 
         `
         <h1>Tic-Tac-Toe</h1>
+        <h1>(3目並べ)</h1>
         <div class="d-flex align-items-center justify-content-around col-8">
             <div class="col-6">
-                <button id="vscpu" class="btn btn-primary btn-block">VS CPU</button>
+                <button id="vscpu" class="btn btn-dark btn-block py-5">VS CPU</button>
             </div>
             <div class="col-6">
-                <button id="vsfriend" class="btn btn-primary btn-block">VS Friend</button> 
+                <button id="vsfriend" class="btn btn-dark btn-block py-5">VS Friend</button> 
             </div>
         </div>
         `;
@@ -128,7 +129,7 @@ class View {
 
    static createResultPage(table) {
     let container = document.createElement("div");
-    container.classList.add("vh-100", "text-center", "d-flex", "flex-column", "justify-content-center");
+    container.classList.add("vh-100", "d-flex", "flex-column", "align-items-center", "justify-content-center", "text-center", "bg-customBlue");
 
     let winner = "";
     if(table.isDraw){
@@ -140,16 +141,9 @@ class View {
     container.innerHTML = 
     `
     <h1>${winner}</h1>
-    <div class="d-flex justify-content-center">
+    <div class="d-flex align-items-center justify-content-around col-8">
         <div class="col-6">
-            <buttton id="restart" class="btn btn-primary btn-lg btn-block">
-                restart
-            </buttton>
-        </div>
-        <div class="col-6">
-            <buttton id="finish" class="btn btn-primary btn-lg btn-block">
-                finish
-            </buttton>
+            <buttton id="restart" class="btn btn-dark btn-block py-5">restart</buttton>
         </div>
     </div>
     `;
