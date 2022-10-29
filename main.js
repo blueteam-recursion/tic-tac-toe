@@ -230,9 +230,6 @@ class Controller {
             View.config.resultPage.classList.add("d-none");
             location.reload();
         })
-        let finish = View.config.resultPage.querySelectorAll("#finish")[0].addEventListener("click", function() {
-            View.config.resultPage.classList.add("d-none");
-        })
     }
 
     static changeTurn(table) {
