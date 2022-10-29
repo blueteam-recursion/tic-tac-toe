@@ -227,8 +227,10 @@ class Controller {
         View.createResultPage(table);
 
         let restart = View.config.resultPage.querySelectorAll("#restart")[0].addEventListener("click", function() {
-            View.config.resultPage.classList.add("d-none");
-            location.reload();
+            View.config.resultPage.innerHTML = "";
+            View.config.mainPage.classList.remove("d-none");
+            View.config.mainPage.innerHTML = "";
+            View.config.mainPage.append(View.createMainPage((new Table(Board.createBoard()))));
         })
     }
 
