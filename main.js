@@ -92,7 +92,7 @@ class View {
 
    static createStartPage() {
         let container = document.createElement("div");
-        container.classList.add("vh-100", "d-flex", "flex-column", "align-items-center", "justify-content-center", "text-center", "bg-customBlue");
+        container.classList.add("vh-100", "d-flex", "flex-column", "align-items-center", "justify-content-center", "text-center");
         container.innerHTML = 
         `
         <h1 class="">Tic-Tac-Toe</h1>
@@ -101,10 +101,10 @@ class View {
         <div class="d-flex align-items-center justify-content-around">
             <br><br><br>
             <div class="col-7">
-                <button id="vscpu" class="btn btn-danger btn-block">VS CPU</button>
+                <button id="vscpu" class="btn btn-danger btn-block btn-lg py-3">VS CPU</button>
             </div>
             <div class="col-7">
-                <button id="vsfriend" class="btn btn-primary btn-block">VS Friend</button> 
+                <button id="vsfriend" class="btn btn-primary btn-block btn-lg py-3">VS Friend</button> 
             </div>
         </div>
         `;
@@ -131,7 +131,7 @@ class View {
 
    static createResultPage(table) {
     let container = document.createElement("div");
-    container.classList.add("vh-100", "d-flex", "flex-column", "align-items-center", "justify-content-center", "text-center", "bg-customBlue");
+    container.classList.add("vh-100", "d-flex", "align-items-center", "justify-content-center", "text-center");
 
     let winner = "";
     if(table.isDraw){
@@ -142,12 +142,9 @@ class View {
 
     container.innerHTML = 
     `
-    <h1>Winner</h1>
-    <h1>${winner}</h1>
-    <div class="d-flex align-items-center justify-content-around col-8">
-        <div class="col-6">
-            <buttton id="restart" class="btn btn-dark btn-block py-5">restart</buttton>
-        </div>
+    <div class="col-5 d-flex flex-column align-items-center justify-content-center">
+        <h1>${winner}</h1>
+        <buttton id="restart" class="btn btn-secondary btn-block py-5">ReSTART</buttton>
     </div>
     `;
     return this.config.resultPage.append(container);
