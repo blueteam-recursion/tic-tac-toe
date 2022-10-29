@@ -95,14 +95,16 @@ class View {
         container.classList.add("vh-100", "d-flex", "flex-column", "align-items-center", "justify-content-center", "text-center", "bg-customBlue");
         container.innerHTML = 
         `
-        <h1>Tic-Tac-Toe</h1>
-        <h1>(3目並べ)</h1>
-        <div class="d-flex align-items-center justify-content-around col-8">
-            <div class="col-6">
-                <button id="vscpu" class="btn btn-dark btn-block py-5">VS CPU</button>
+        <h1 class="">Tic-Tac-Toe</h1>
+        <br>
+        <img class="startImgß" src="https://codebrainer.azureedge.net/images/tic-tac-toe_04.png" height="350" width="350">
+        <div class="d-flex align-items-center justify-content-around">
+            <br><br><br>
+            <div class="col-7">
+                <button id="vscpu" class="btn btn-danger btn-block">VS CPU</button>
             </div>
-            <div class="col-6">
-                <button id="vsfriend" class="btn btn-dark btn-block py-5">VS Friend</button> 
+            <div class="col-7">
+                <button id="vsfriend" class="btn btn-primary btn-block">VS Friend</button> 
             </div>
         </div>
         `;
@@ -140,6 +142,7 @@ class View {
 
     container.innerHTML = 
     `
+    <h1>Winner</h1>
     <h1>${winner}</h1>
     <div class="d-flex align-items-center justify-content-around col-8">
         <div class="col-6">
@@ -157,11 +160,11 @@ class View {
         rowContainer.classList.add("d-flex", "justify-content-center");
         for(let j=0; j<table.board[0].length; j++){
             let area = document.createElement("div");
-            area.classList.add("col-12", "border", "text-center");
+            area.classList.add("col-10", "board-border","text-center");
             area.innerHTML = 
             `
             <div id="${""+i+j}">
-                <p>${table.board[i][j]}</p>
+                <div></div>
             </div>
             `;
             area.addEventListener("click", function() {
@@ -170,8 +173,8 @@ class View {
                     if(player === "先攻") {
                         area.innerHTML =
                         `
-                        <div id="${""+i+j}" class="bg-primary">
-                            <p>○</p>
+                        <div id="${""+i+j}" class="text-primary pt-3 d-flex justify-content-center aligin-items-center">
+                            <p class="circle">○</p>
                         </div>
                         `;
                         table.board[i][j] = 1;
@@ -180,8 +183,8 @@ class View {
                     if(player === "後攻") {
                         area.innerHTML =
                         `
-                        <div id="${""+i+j}" class="bg-danger">
-                            <p>x</p>
+                        <div id="${""+i+j}" class="text-danger pt-3 d-flex justify-content-center aligin-items-center">
+                            <p class="cross">×</p>
                         </div>
                         `;
                         table.board[i][j] = -1;
